@@ -1,22 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/05 10:19:22 by vcacador          #+#    #+#             */
+/*   Updated: 2022/12/16 14:34:37 by vcacador         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-t_stacks *stacks(void)
+t_stack *stack_a(void)
 {
-	static t_stacks stacks;
-	return (&stacks);
+	static t_stack stacks_a;
+	return (&stack_a);
 }
 
-int main(int ac, char **av)
+t_stack *stack_b(void)
 {
-	int i = 0;
-	stacks()->stack_a->length = ac - 1;
-	if(errors_and_stacks(ac, av) != 0)
+	static t_stack stacks_b;
+	return (&stack_a);
+}
+
+int	main(int ac, char **av)
+{
+	int	i	= 0;
+	
+	utills()->ac = ac - 1;
+	if (errors_and_stacks(av) > 0)
 		return (0);
-	push_a();
 	/* three_numbers(ac); */
-	while (ac > i + 1)
+	/* algorithm(); */
+	while (utills()->ac >= i)
 	{
-		printf("stack A ->%d stack B ->%d\n", stacks()->stack_a->stack[i], stacks()->stack_b->stack[i]);
+		ft_printf("stack A ->%d\n", stack_a()->num);
 		i++;
 	}
 	return (0);

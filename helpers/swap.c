@@ -1,37 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/05 10:33:27 by vcacador          #+#    #+#             */
+/*   Updated: 2022/12/15 16:33:30 by vcacador         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../push_swap.h"
 
-void swap_A(int ver)
+void	swap_a(int ver)
 {
-	int temp;
-
-	if (!stacks()->stack_A[0] || !stacks()->stack_A[1])
+	if (!p_swap()->a || !p_swap()->a->next)
 		return ;
-	temp = stacks()->stack_A[0];
-	stacks()->stack_A[0] = stacks()->stack_A[1];
-	stacks()->stack_A[1] = temp;
+	tmp = p_swap()->a;
+	p_swap()->a = p_swap()->a->next;
+	p_swap()->a->next = tmp;
 	if (ver != 1)
-		ft_printf("sa\n");
+		ft_printf("ra\n");
 	return ;
 }
 
-void swap_B(int ver)
+void	swap_b(int ver)
 {
-	int temp;
-
-	if (!stacks()->stack_B[0] || !stacks()->stack_B[1])
+	t_stack	*tmp;
+	if (!p_swap()->b || !p_swap()->b->next)
 		return ;
-	temp = stacks()->stack_B[0];
-	stacks()->stack_B[0] = stacks()->stack_B[1];
-	stacks()->stack_B[1] = temp;
+	tmp = p_swap()->b;
+	p_swap()->b = p_swap()->b->next;
+	p_swap()->b->next = tmp;
 	if (ver != 1)
-		ft_printf("sb\n");
+		ft_printf("ra\n");
 	return ;
 }
 
-void swap_A_and_B(void)
+void	swap_a_and_b(void)
 {
-	swap_A(1);
-	swap_B(1);
+	swap_a(1);
+	swap_b(1);
 	ft_printf("ss\n");
 	return ;
 }
