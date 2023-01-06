@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:25:58 by vcacador          #+#    #+#             */
-/*   Updated: 2022/12/06 11:50:55 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/01/04 17:42:37 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,7 @@ int	errors_and_stacks(char **av)
 		return (ft_printf("Error\n"));
 	if (check_dup() == 1)
 		return (ft_printf("Error\n"));
+	if (no_input() == 1)
+		return (1);
 	return (0);
 }

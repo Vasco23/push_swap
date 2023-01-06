@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:26:21 by vcacador          #+#    #+#             */
-/*   Updated: 2022/12/05 16:58:51 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/01/04 16:39:55 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ long	ft_atol(const char *nptr)
 	}
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		if (result * sinal >= -2147483648 || result * sinal <= 2147483647)
+		if (result * sinal >= -2147483648 && result * sinal <= 2147483647)
 			result = (result * 10) + (nptr[i++] - '0');
 		else
-			return (-21474836508);
+			return (-2147483656);
 	}
 	return (result * sinal);
 }

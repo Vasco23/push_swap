@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:28:01 by vcacador          #+#    #+#             */
-/*   Updated: 2022/12/15 13:15:56 by vcacador         ###   ########.fr       */
+/*   Updated: 2022/12/18 15:58:42 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	is_all_numbers(char **av)
 	int	i;
 
 	i = 1;
-	while (p_swap()->utills.ac >= i)
+	while (stack_a()->length >= i)
 	{
 		if (is_number(av[i]) == 1)
 			return (1);

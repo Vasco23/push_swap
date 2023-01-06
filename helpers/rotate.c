@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:34:56 by vcacador          #+#    #+#             */
-/*   Updated: 2022/12/09 15:58:46 by vcacador         ###   ########.fr       */
+/*   Updated: 2022/12/20 17:00:39 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,21 @@
 
 void	rotate_a(int ver)
 {
-	if (!p_swap()->a || !p_swap()->a->next)
+	int i;
+	int tmp;
+	int tmp_2;
+
+	i = 0;
+	if (stack_a()->length < 2)
 		return ;
-	p_swap()->tmp = p_swap()->a;
-	while (p_swap()->a->next)
-		p_swap()->a = p_swap()->a->next;
-	p_swap()->a->next = p_swap()->tmp;
+	tmp_2 = stack_a()->stack[i];
+	while (stack_a()->length > i + 1)
+	{
+		tmp = stack_a()->stack[i + 1];
+		stack_a()->stack[i] = tmp;
+		i++;
+	}
+	stack_a()->stack[i] = tmp_2;
 	if (ver != 1)
 		ft_printf("ra\n");
 	return ;
@@ -27,14 +36,23 @@ void	rotate_a(int ver)
 
 void	rotate_b(int ver)
 {
-	if (!p_swap()->b || !p_swap()->b->next)
+	int i;
+	int tmp;
+	int tmp_2;
+
+	i = 0;
+	if (stack_b()->length < 2)
 		return ;
-	p_swap()->tmp = p_swap()->b;
-	while (p_swap()->b->next)
-		p_swap()->b = p_swap()->b->next;
-	p_swap()->b->next = p_swap()->tmp;
+	tmp_2 = stack_b()->stack[0];
+	while (stack_b()->length > i + 1)
+	{
+		tmp = stack_b()->stack[i + 1];
+		stack_b()->stack[i] = tmp;
+		i++;
+	}
+	stack_b()->stack[i] = tmp_2;
 	if (ver != 1)
-		ft_printf("ra\n");
+		ft_printf("rb\n");
 	return ;
 }
 

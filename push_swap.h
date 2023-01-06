@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:30:24 by vcacador          #+#    #+#             */
-/*   Updated: 2022/12/16 14:35:50 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/01/06 09:14:40 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stdlib.h>
 # include "./ft_printf/ft_printf.h"
 
+typedef struct s_utils
+{
+	int *tmp;
+	int ac;
+}		t_utils;
+
 typedef struct s_stack
 {
 	int	*stack;
@@ -25,6 +31,7 @@ typedef struct s_stack
 
 t_stack 	*stack_a(void);
 t_stack		*stack_b(void);
+t_utils 	*utils(void);
 int			copy_av(char **av);
 long		ft_atol(const char *nptr);
 int			is_all_numbers(char **av);
@@ -47,7 +54,13 @@ int			confirm(void);
 void		get_tmp_org(void);
 int			median(void);
 void		algorithm(void);
-
+int			no_input(void);
+void 		sort_stacks(void);
+int 		check_a(void);
+long 		get_3_lower_A(int *array, int lenght, int n);
+void 		send_to_b(long nbr , int n_times);
+void 		sort_tmp(void);
+int 		check_a_only_3(void);
 /* t_stack		*ft_lstnew(int num);
 t_stack		*ft_lstlast(t_stack *lst);
 void		ft_lstadd_front(t_stack *lst, t_stack *new);

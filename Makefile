@@ -14,17 +14,18 @@ SRC_PATH = ./helpers
 SRC_NAME =	check_dup.c			\
 			copy_av.c			\
 			push.c				\
+			ft_atol.c			\
 			errors_and_stacks.c	\
-			#ft_atol.c			\
-			ft_strcmp.c			\
 			is_all_numbers.c	\
+			reverse_rotate.c	\
+			rotate.c			\
 			swap.c				\
-			#rotate.c			\
-			#reverse_rotate.c	\
-			#3_numbers.c			\
-			#confirm.c			\
-			#algorithm.c			\
-			#list.c				
+			3_numbers.c			\
+			confirm.c			\
+			no_input.c			\
+			algorithm.c			\
+			sort_stacks.c		\
+			sort_stacks_2.c
 
 INC = -I ./ft_printf -I.
 

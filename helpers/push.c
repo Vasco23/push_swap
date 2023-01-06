@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:28:23 by vcacador          #+#    #+#             */
-/*   Updated: 2022/12/16 14:40:08 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/01/05 19:00:53 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,15 @@
 
 void	put_a_new_nbr(int *stack, int len, int nbr)
 {
-	int	tmp_1;
-	int	tmp_2;
-	int	i;
+	int	tmp;
 
-	i = 0;
-	while (i >= 0)
+	while (len > 0)
 	{
-		tmp_1 = stack[i];
-		if (i == 0)
-			stack[i] = len;
-		else
-		{
-			tmp_2 = stack[i + 1];
-			stack[i] = tmp_1;
-			tmp_1 = tmp_2;
-		}
-		i++;
+		tmp = stack[len - 1];
+		stack[len] = tmp;
+		len--;
 	}
-	stack[i] = tmp_1;
+	stack[len] = nbr;
 	return ;
 }
 
@@ -42,32 +32,37 @@ void	clean_frist_nbr(int *stack, int len)
 
 	i = 0;
 	while (len >= 0)
+	{
 		stack[i] = stack[i + 1];
+		i++;
+		len--;
+	}
+	stack[i] = 0;
 	return ;
 }
 
 void	push_a(void)
 {
-	if (!stack_b()->length < 1)
+	if (stack_b()->length < 1)
 		return ;
-	stack_b()->length += 1;
+	stack_a()->length += 1;
 	stack_b()->length -= 1;
-	put_a_new_nbr(stacks()->stack_a->stack, stacks()->stack_a->length,
-		stacks()->stack_b->stack[0]);
-	clean_frist_nbr(stacks()->stack_b->stack, stacks()->stack_b->length);
+	put_a_new_nbr(stack_a()->stack, stack_a()->length,
+		stack_b()->stack[0]);
+	clean_frist_nbr(stack_b()->stack, stack_b()->length);
 	ft_printf("pa\n");
 	return ;
 }
 
 void	push_b(void)
 {
-	if (!stacks()->stack_a->length < 1)
+	if (stack_a()->length < 1)
 		return ;
-	stacks()->stack_b->length += 1;
-	stacks()->stack_a->length -= 1;
-	put_a_new_nbr(stacks()->stack_b->stack, stacks()->stack_b->length,
-		stacks()->stack_a->stack[0]);
-	clean_frist_nbr(stacks()->stack_a->stack, stacks()->stack_a->length);
-	ft_printf("pa\n");
+	stack_b()->length += 1;
+	stack_a()->length -= 1;
+	put_a_new_nbr(stack_b()->stack, stack_b()->length,
+		stack_a()->stack[0]);
+	clean_frist_nbr(stack_a()->stack, stack_a()->length);
+	ft_printf("pb\n");
 	return ;
 }

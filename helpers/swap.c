@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:33:27 by vcacador          #+#    #+#             */
-/*   Updated: 2022/12/15 16:33:30 by vcacador         ###   ########.fr       */
+/*   Updated: 2022/12/21 11:23:12 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,29 @@
 
 void	swap_a(int ver)
 {
-	if (!p_swap()->a || !p_swap()->a->next)
+	int tmp;
+
+	if (stack_a()->length < 1)
 		return ;
-	tmp = p_swap()->a;
-	p_swap()->a = p_swap()->a->next;
-	p_swap()->a->next = tmp;
+	tmp = stack_a()->stack[0];
+	stack_a()->stack[0] = stack_a()->stack[1];
+	stack_a()->stack[1] = tmp;
 	if (ver != 1)
-		ft_printf("ra\n");
+		ft_printf("sa\n");
 	return ;
 }
 
 void	swap_b(int ver)
 {
-	t_stack	*tmp;
-	if (!p_swap()->b || !p_swap()->b->next)
+	int tmp;
+
+	if (stack_b()->length < 1)
 		return ;
-	tmp = p_swap()->b;
-	p_swap()->b = p_swap()->b->next;
-	p_swap()->b->next = tmp;
+	tmp = stack_b()->stack[0];
+	stack_b()->stack[0] = stack_b()->stack[1];
+	stack_b()->stack[1] = tmp;
 	if (ver != 1)
-		ft_printf("ra\n");
+		ft_printf("sb\n");
 	return ;
 }
 
