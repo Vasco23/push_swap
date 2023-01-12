@@ -6,15 +6,8 @@ void push_a_n_times(int n);
 
 void sort_stacks(void)
 {
-	/* int i = 0; */
 	while(stack_b()->length > 0)
 	{
-		/* while (utils()->ac > i)
-		{
-			ft_printf("\nstack A ->%d stack B ->%d\n", stack_a()->stack[i], stack_b()->stack[i]);
-			i++;
-		}
-		i = 0; */
 		cases_1();
 	}
 }

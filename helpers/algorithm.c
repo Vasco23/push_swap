@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 10:29:53 by vcacador          #+#    #+#             */
-/*   Updated: 2023/01/06 15:58:03 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/01/08 18:10:13 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,20 @@ long get_3_lower_A(int *array, int lenght, int n)
 		index += n;
 	else
 		return (2147483649);
-/* 	printf("index-> %d\n", index - 1); */
 	return (array[index - 1]);
 }
+
+/* long get_divide(int *array, int lenght, int n)
+{
+	static int	times;
+	int			i;
+
+	i = 0;
+	while (utils()->div > i)
+	{
+	
+	}
+} */
 
 int up_or_down(int nbr)
 {
@@ -65,26 +76,18 @@ int up_or_down(int nbr)
 
 	tmp = 0;
 	i = 0;
-	while (i < utils()->ac)
+	j = 0;
+	while (stack_a()->stack[j] > nbr)
+		j++;
+	tmp = stack_a()->length - 1;
+	while (stack_a()->stack[tmp] > nbr)
 	{
-		if (stack_a()->stack[i] <= nbr)
-			break;
-		i++;
-	}
-	j = i;
-	tmp = utils()->ac - 1;
-	i = 1;
-	while (tmp >= 0)
-	{
-		if (stack_a()->stack[i] <= nbr)
-			break;
 		tmp--;
 		i++;
 	}
 	if (i < j)
 		return (1);
-	else
-		return (2);
+	return (2);
 }
 
 void sort_tmp(void)

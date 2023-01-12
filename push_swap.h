@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:30:24 by vcacador          #+#    #+#             */
-/*   Updated: 2023/01/06 09:14:40 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/01/08 17:56:51 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_utils
 {
 	int *tmp;
 	int ac;
+	int div;
 }		t_utils;
 
 typedef struct s_stack
