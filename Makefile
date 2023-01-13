@@ -25,7 +25,8 @@ SRC_NAME =	check_dup.c			\
 			no_input.c			\
 			algorithm.c			\
 			sort_stacks.c		\
-			sort_stacks_2.c
+			sort_stacks_2.c		\
+			sort_more_than_50.c	\
 
 INC = -I ./ft_printf -I.
 

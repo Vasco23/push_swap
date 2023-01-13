@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 10:29:53 by vcacador          #+#    #+#             */
-/*   Updated: 2023/01/08 18:10:13 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:17:18 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void sort_tmp(void)
 	while (i < utils()->ac)
 	{
 		j = i + 1;
-		while(j < utils()->ac)
+		while (j < utils()->ac)
 		{
 			if (utils()->tmp[i] > utils()->tmp[j])
 			{
@@ -120,10 +120,10 @@ int check_if_lower_n(int n)
 	int i;
 
 	i = 0;
-	while(i < stack_a()->length)
+	while (i < stack_a()->length)
 	{
 		if (stack_a()->stack[i] <= n)
-			return(0);
+			return (0);
 		i++;
 	}
 	return (1);

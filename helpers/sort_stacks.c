@@ -35,9 +35,7 @@ int check_a(void)
 void cases_1(void)
 {
 	if (stack_b()->stack[0] >= stack_b()->stack[1] && stack_b()->stack[1] >= stack_b()->stack[2])
-	{
 		push_a_n_times(3);
-	}
 	else if (stack_b()->stack[0] < stack_b()->stack[1])
 	{
 		if (stack_b()->stack[1] < stack_b()->stack[2])
@@ -47,7 +45,6 @@ void cases_1(void)
 			push_a_n_times(2);
 			swap_a(0);
 			reverse_rotate_a(0);
-
 		}
 		else if (stack_b()->stack[0] > stack_b()->stack[2])
 		{
@@ -79,7 +76,6 @@ void cases_1(void)
 			swap_a(0);
 		}
 	}
-	return ;	
 }
 
 
