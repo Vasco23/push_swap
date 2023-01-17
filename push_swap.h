@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:30:24 by vcacador          #+#    #+#             */
-/*   Updated: 2023/01/13 16:50:28 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/01/16 14:20:33 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,17 @@ int			no_input(void);
 void 		sort_stacks(void);
 int 		check_a(void);
 long 		get_3_lower_A(int *array, int lenght, int n);
-void 		send_to_b(long nbr , int n_times);
+void 		send_to_b(long nbr , int n_times, int lower);
 void 		sort_tmp(void);
 int 		check_a_only_3(void);
-void 		sort_less_than_50(int n);
+void 		sort_less_than_50(int n, int j, int v);
 void 		sort_50_or_more(void);
+long 		get_3_lower_A_2(int *array, int lenght, int n);
+void 		sort(void);
+int 		check_if_lower_n(int n);
+int 		check_if_bigger_b(int n);
+int 		cases(void);
+void 		count_moves(void);
 /* t_stack		*ft_lstnew(int num);
 t_stack		*ft_lstlast(t_stack *lst);
 void		ft_lstadd_front(t_stack *lst, t_stack *new);

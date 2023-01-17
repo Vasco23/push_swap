@@ -6,40 +6,38 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 10:29:53 by vcacador          #+#    #+#             */
-/*   Updated: 2023/01/13 15:17:18 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/01/16 11:30:43 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-int 	up_or_down(int nbr);
-int 	check_if_lower_n(int n);
+int 	up_or_down(int nbr, int lower);
 
-void send_to_b(long nbr , int n_times)
+void send_to_b(long nbr , int n_times, int lower)
 {
 	int tmp;
-	int i;
-	
-	i = 0;
+
 	tmp = 0;
+	/* printf("%d lower\n", lower);
+	printf("%ld nbr\n", nbr); */
 	while(n_times >= 1)
 	{
-		tmp = up_or_down(nbr);
-		while (stack_a()->stack[0] > nbr && tmp == 1 && check_if_lower_n(nbr) == 0)
+		tmp = up_or_down(nbr, lower);
+		/* printf("%d n_times\n", n_times); */
+		if (tmp == 1)
 		{
-			reverse_rotate_a(0);
-			i++;
-		}
-		if (stack_a()->stack[0] <= nbr)
+			while (check_if_lower_n(nbr) == 0 && (stack_a()->stack[0] > nbr || stack_a()->stack[0] < lower))
+				reverse_rotate_a(0);
 			push_b();
-		i = 0;
-		while (stack_a()->stack[0] > nbr && tmp == 2 && check_if_lower_n(nbr) == 0)
+		}
+		if (tmp == 2)
 		{
-			rotate_a(0);
-			i++;
-		}
-		if (stack_a()->stack[0] <= nbr)
+			while (check_if_lower_n(nbr) == 0 && (stack_a()->stack[0] > nbr || stack_a()->stack[0] < lower))
+				rotate_a(0);
 			push_b();
+			
+		}
 		n_times--;
 	}
 	return ;
@@ -51,24 +49,24 @@ long get_3_lower_A(int *array, int lenght, int n)
 		
 	if (index + n <= lenght)
 		index += n;
-	else
-		return (2147483649);
+	/* else
+		return (2147483649); */
 	return (array[index - 1]);
 }
 
-/* long get_divide(int *array, int lenght, int n)
+long get_3_lower_A_2(int *array, int lenght, int n)
 {
-	static int	times;
-	int			i;
-
-	i = 0;
-	while (utils()->div > i)
-	{
+	static int	index_2;
 	
-	}
-} */
+	if (index_2 + n <= lenght)
+		index_2 += n;
+	/* else
+		return (2147483649); */
+	return (array[index_2 - 1]);
+}
 
-int up_or_down(int nbr)
+
+int up_or_down(int nbr , int lower)
 {
 	int tmp;
 	int j;
@@ -77,10 +75,10 @@ int up_or_down(int nbr)
 	tmp = 0;
 	i = 0;
 	j = 0;
-	while (stack_a()->stack[j] > nbr)
+	while (stack_a()->stack[j] > nbr || stack_a()->stack[j] < lower)
 		j++;
 	tmp = stack_a()->length - 1;
-	while (stack_a()->stack[tmp] > nbr)
+	while (stack_a()->stack[tmp] > nbr || stack_a()->stack[tmp] < lower)
 	{
 		tmp--;
 		i++;
