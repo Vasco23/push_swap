@@ -4,24 +4,24 @@ int up_or_down_2(int nbr);
 void send_to_a(long nbr , int n_times);
 long get_3_bigger(int *array, int lenght, int n);
 
-
-void sort(void)
+void sort_impars(void)
 {
 	int i = 0;
-	/* int j = 1; */
-	i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac/2);
-	while (check_if_lower_n(i) == 0)
+	int j = 0;
+	while (j++ < 2)
 	{
-		if (stack_a()->stack[0] <= i)
-			push_b();
-		else if (up_or_down_2(i) == 1)
-			reverse_rotate_a(0);
-		else if (up_or_down_2(i) == 2)
-			rotate_a(0);
-		if (stack_b()->length > 1 && stack_b()->stack[0] < stack_b()->stack[1])
-			swap_b(0);
+		i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 3);
+		while (check_if_lower_n(i) == 0)
+		{
+			if (stack_a()->stack[0] <= i)
+				push_b();
+			else if (up_or_down_2(i) == 1)
+				reverse_rotate_a(0);
+			else if (up_or_down_2(i) == 2)
+				rotate_a(0);
+		}
 	}
-	i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 2 - 3);
+	i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 3 - 3);
 	while (check_if_lower_n(i) == 0)
 	{
 		if (stack_a()->stack[0] <= i)
@@ -30,8 +30,41 @@ void sort(void)
 			reverse_rotate_a(0);
 		else if (up_or_down_2(i) == 2)
 			rotate_a(0);
-		if (stack_b()->length > 1 && stack_b()->stack[0] < stack_b()->stack[1])
-			swap_b(0);
+	}
+	three_numbers();
+}
+
+void sort_pars(void)
+{
+	int i = 0;
+	int j = 0;
+	/* int j = 1; */
+	while (j++ < 3)
+	{
+		i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 4);
+		while (check_if_lower_n(i) == 0)
+		{
+			if (stack_a()->stack[0] <= i)
+				push_b();
+			else if (up_or_down_2(i) == 1)
+				reverse_rotate_a(0);
+			else if (up_or_down_2(i) == 2)
+				rotate_a(0);
+			/* if (stack_b()->length > 1 && stack_b()->stack[0] < stack_b()->stack[1])
+				swap_b(0); */
+		}
+	}
+	i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 4 - 3);
+	while (check_if_lower_n(i) == 0)
+	{
+		if (stack_a()->stack[0] <= i)
+			push_b();
+		else if (up_or_down_2(i) == 1)
+			reverse_rotate_a(0);
+		else if (up_or_down_2(i) == 2)
+			rotate_a(0);
+		/* if (stack_b()->length > 1 && stack_b()->stack[0] < stack_b()->stack[1])
+			swap_b(0); */
 	}
 	three_numbers();
 	/* i = 3;

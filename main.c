@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:19:22 by vcacador          #+#    #+#             */
-/*   Updated: 2023/01/13 17:03:00 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/01/19 17:23:59 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,15 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	sort_tmp();
+	if ((utils()->ac) % 2 == 0)
+		sort_pars();
+	else if ((utils()->ac) % 2 != 0)
+		sort_impars();
+	while (stack_a()->length != utils()->ac)
+		count_moves();
+	put_in_place();
 	/* printf("\n%d\n", utils()->div); */
-	sort_50_or_more();
+	/* sort_50_or_more(); */
 	/* sort_stacks(); */
 	/* i = 0; */
 	/* while (utils()->ac > i)
