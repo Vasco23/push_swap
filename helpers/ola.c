@@ -8,9 +8,12 @@ void sort_impars(void)
 {
 	int i = 0;
 	int j = 0;
-	while (j++ < 2)
+	while (j++ < 6)
 	{
-		i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 3);
+		if (utils()->ac % 6 != 0)
+			i = get_3_lower_A(utils()->tmp, utils()->ac, (utils()->ac / 6 + 1));
+		else
+			i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 6);
 		while (check_if_lower_n(i) == 0)
 		{
 			if (stack_a()->stack[0] <= i)
@@ -21,7 +24,7 @@ void sort_impars(void)
 				rotate_a(0);
 		}
 	}
-	i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 3 - 3);
+	i = get_3_lower_A(utils()->tmp, utils()->ac, stack_a()->length - 3);
 	while (check_if_lower_n(i) == 0)
 	{
 		if (stack_a()->stack[0] <= i)
@@ -39,9 +42,12 @@ void sort_pars(void)
 	int i = 0;
 	int j = 0;
 	/* int j = 1; */
-	while (j++ < 3)
+	while (j++ < 6)
 	{
-		i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 4);
+		if (utils()->ac % 7 != 0)
+			i = get_3_lower_A(utils()->tmp, utils()->ac, (utils()->ac / 7 + 1));
+		else
+			i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 7);
 		while (check_if_lower_n(i) == 0)
 		{
 			if (stack_a()->stack[0] <= i)
@@ -54,7 +60,10 @@ void sort_pars(void)
 				swap_b(0); */
 		}
 	}
-	i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 4 - 3);
+	/* if (utils()->ac % 4 != 0)
+		i = get_3_lower_A(utils()->tmp, utils()->ac, (utils()->ac / 6 + 2) - 3);
+	else  */
+		i = get_3_lower_A(utils()->tmp, utils()->ac, stack_a()->length - 3);
 	while (check_if_lower_n(i) == 0)
 	{
 		if (stack_a()->stack[0] <= i)

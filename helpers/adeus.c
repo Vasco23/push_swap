@@ -2,7 +2,6 @@
 
 int check_if_bigger_a(int n);
 int check_if_lower_a(int n);
-int compare_cases(int n);
 int check_lower(void);
 int up_or_down_3(int nbr);
 int compare_cases_2(int n);

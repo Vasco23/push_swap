@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:30:24 by vcacador          #+#    #+#             */
-/*   Updated: 2023/01/19 17:15:25 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/01/26 15:23:50 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ int 		cases(void);
 void 		count_moves(void);
 void 		put_in_place(void);
 void 		sort_impars(void);
+int			cost(void);
+int 		compare_cases(int n);
 
 /* t_stack		*ft_lstnew(int num);
 t_stack		*ft_lstlast(t_stack *lst);

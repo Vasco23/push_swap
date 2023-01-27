@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:20:30 by vcacador          #+#    #+#             */
-/*   Updated: 2023/01/06 11:28:56 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/01/26 01:04:13 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	save_lines3(void);
 
 void	three_numbers(void)
 {
-	if (confirm() == 0)
+	if (confirm() != 1)
 		return ;
 	if (utils()->ac == 2 && stack_a()->stack[0] > stack_a()->stack[1])
 		swap_a(0);

@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:19:22 by vcacador          #+#    #+#             */
-/*   Updated: 2023/01/19 17:23:59 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/01/26 02:37:17 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,10 @@ int	main(int ac, char **av)
 	if (utils()->ac == 3)
 	{
 		three_numbers();
+		for (int i = 0; utils()->ac > i; i++)
+		{
+			ft_printf("\nstack A ->%d stack B ->%d\n", stack_a()->stack[i], stack_b()->stack[i]);
+		} 
 		return (0);
 	}
 	sort_tmp();
@@ -61,10 +65,12 @@ int	main(int ac, char **av)
 	/* sort_50_or_more(); */
 	/* sort_stacks(); */
 	/* i = 0; */
-	/* while (utils()->ac > i)
+	/* for (int i = 0; utils()->ac > i; i++)
 	{
 		ft_printf("\nstack A ->%d stack B ->%d\n", stack_a()->stack[i], stack_b()->stack[i]);
-		i++;
 	} */
+	free(utils()->tmp);
+	free(stack_a()->stack);
+	free(stack_b()->stack);
 	return (0);
 }
