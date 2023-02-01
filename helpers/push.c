@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:28:23 by vcacador          #+#    #+#             */
-/*   Updated: 2023/01/05 19:00:53 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/01/30 17:28:50 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	put_a_new_nbr(int *stack, int len, int nbr)
 {
 	int	tmp;
 
+	len -= 1;
 	while (len > 0)
 	{
 		tmp = stack[len - 1];
@@ -31,7 +32,7 @@ void	clean_frist_nbr(int *stack, int len)
 	int	i;
 
 	i = 0;
-	while (len >= 0)
+	while (len > 0)
 	{
 		stack[i] = stack[i + 1];
 		i++;

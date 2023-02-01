@@ -1,5 +1,5 @@
 #include "../push_swap.h"
-
+/* 
 int cost(void)
 {
 	int i;
@@ -31,4 +31,4 @@ int cost_a(int num)
 	i = 0;
 	if (compare_cases(num) >= stack_a()->length / 2)
 		return ()
-}
+} */

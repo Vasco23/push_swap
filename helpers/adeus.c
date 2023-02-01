@@ -155,9 +155,12 @@ int compare_cases(int n)
 		j = i + 1;
 		while (j < stack_a()->length)
 		{
-			while ((n - stack_a()->stack[j]) < 0)
+			while (j < stack_a()->length && (n - stack_a()->stack[j]) < 0)
 				j++;
-			tmp_2 = n - stack_a()->stack[j];
+			/* printf("j->> %d\n", j); */
+			if (j >= stack_a()->length)
+				break ;
+			tmp_2 = (n - stack_a()->stack[j]);
 			if (tmp > tmp_2)
 				break;
 			j++;
@@ -232,7 +235,7 @@ int compare_cases_2 (int n)
 		j = i + 1;
 		while (j < stack_a()->length)
 		{
-			while ((stack_a()->stack[j] - n) < 0)
+			while (j < stack_a()->length && (stack_a()->stack[j] - n) < 0)
 				j++;
 			tmp_2 = stack_a()->stack[j] - n;
 			if (tmp > tmp_2)
