@@ -1,10 +1,10 @@
 NAME = push_swap
 
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g #-fsanitize=address
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -O3 #-fsanitize=address
 RM = rm -f
 
-# $(VERBOSE).SILENT:
+$(VERBOSE).SILENT:
 
 FT_PRINTF = ./ft_printf/libftprintf.a
 FT_PRINTF_PATH = ./ft_printf
@@ -24,11 +24,9 @@ SRC_NAME =	check_dup.c			\
 			confirm.c			\
 			no_input.c			\
 			algorithm.c			\
-			sort_stacks.c		\
-			sort_stacks_2.c		\
-			sort_more_than_50.c	\
 			ola.c				\
-			adeus.c				
+			adeus.c				\
+			cost.c
 
 INC = -I ./ft_printf -I.
 
@@ -37,6 +35,7 @@ SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME)) main.c
 $(NAME) : $(SRC)
 	make -C $(FT_PRINTF_PATH)
 	$(CC) $(CFLAGS) $(SRC) $(INC) $(FT_PRINTF) -o $(NAME)
+	clear
 	@printf "                                                \n"
 	@printf " ********************************************** \n"
 	@printf " ********* Very good, Very nice!!! ************ \n"
@@ -45,7 +44,8 @@ $(NAME) : $(SRC)
 
 clean:
 	$(RM)	$(SRC:=.o)
-	make clean -C $(FT_PRINTF_PATH)
+	make clean -s -C $(FT_PRINTF_PATH)
+	clear
 	@echo "                                                "
 	@echo " ********************************************** "
 	@echo " **********  So Clean It Shines!  ************* "
@@ -53,7 +53,7 @@ clean:
 	@echo "                                                "
 
 fclean: clean
-	make fclean -C $(FT_PRINTF_PATH)
+		make fclean -s -C $(FT_PRINTF_PATH)
 	$(RM)	$(NAME)
 
 re:	fclean	$(NAME)

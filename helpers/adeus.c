@@ -31,10 +31,6 @@ void count_moves(void)
 				rotate_a(0);
 		}
 		push_a();
-		/* while (check_if_lower_a(stack_a()->stack[stack_a()->length - 1]) == 0)
-			reverse_rotate_a(0);
-		push_a();
-		reverse_rotate_a(0); */
 	}
 	else if (gota_go_fast() == 2)
 	{
@@ -87,11 +83,6 @@ void count_moves(void)
 		}
 		reverse_rotate_b(0);
 		push_a();
-		/* printf("\n\n\n\n");
-		for(int i = 0; utils()->ac > i; i++)
-		{
-			ft_printf("\nstack A ->%d stack B ->%d\n", stack_a()->stack[i], stack_b()->stack[i]);
-		} */
 	}
 }
 
@@ -100,7 +91,7 @@ void put_in_place(void)
 	int tmp;
 
 	tmp = up_or_down_3(compare_cases(check_lower()));
-	while (stack_a()->stack[0] != compare_cases(check_lower()))
+	while (stack_a()->stack[0] != utils()->tmp[0])
 	{
 		if (tmp == 1)
 			reverse_rotate_a(0);

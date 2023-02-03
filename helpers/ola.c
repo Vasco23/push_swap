@@ -4,16 +4,13 @@ int up_or_down_2(int nbr);
 void send_to_a(long nbr , int n_times);
 long get_3_bigger(int *array, int lenght, int n);
 
-void sort_impars(void)
+void sort_more_than_100(void)
 {
 	int i = 0;
 	int j = 0;
-	while (j++ < 6)
+	while (j++ < 9)
 	{
-		if (utils()->ac % 6 != 0)
-			i = get_3_lower_A(utils()->tmp, utils()->ac, (utils()->ac / 6 + 1));
-		else
-			i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 6);
+		i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 10);
 		while (check_if_lower_n(i) == 0)
 		{
 			if (stack_a()->stack[0] <= i)
@@ -37,17 +34,13 @@ void sort_impars(void)
 	three_numbers();
 }
 
-void sort_pars(void)
+void sort_until_100(void)
 {
 	int i = 0;
 	int j = 0;
-	/* int j = 1; */
-	while (j++ < 6)
+	while (j++ < 5)
 	{
-		if (utils()->ac % 7 != 0)
-			i = get_3_lower_A(utils()->tmp, utils()->ac, (utils()->ac / 7 + 1));
-		else
-			i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 7);
+		i = get_3_lower_A(utils()->tmp, utils()->ac, utils()->ac / 6);
 		while (check_if_lower_n(i) == 0)
 		{
 			if (stack_a()->stack[0] <= i)
@@ -56,14 +49,9 @@ void sort_pars(void)
 				reverse_rotate_a(0);
 			else if (up_or_down_2(i) == 2)
 				rotate_a(0);
-			/* if (stack_b()->length > 1 && stack_b()->stack[0] < stack_b()->stack[1])
-				swap_b(0); */
 		}
 	}
-	/* if (utils()->ac % 4 != 0)
-		i = get_3_lower_A(utils()->tmp, utils()->ac, (utils()->ac / 6 + 2) - 3);
-	else  */
-		i = get_3_lower_A(utils()->tmp, utils()->ac, stack_a()->length - 3);
+	i = get_3_lower_A(utils()->tmp, utils()->ac, stack_a()->length - 3);
 	while (check_if_lower_n(i) == 0)
 	{
 		if (stack_a()->stack[0] <= i)
@@ -72,18 +60,10 @@ void sort_pars(void)
 			reverse_rotate_a(0);
 		else if (up_or_down_2(i) == 2)
 			rotate_a(0);
-		/* if (stack_b()->length > 1 && stack_b()->stack[0] < stack_b()->stack[1])
-			swap_b(0); */
 	}
 	three_numbers();
-	/* i = 3;
-	while(stack_b()->length > 10)
-	{
-		send_to_a(get_3_bigger(utils()->tmp, utils()->ac, i), 3);
-		i += 3;
-	} */
-
 }
+
 
 int up_or_down_2(int nbr)
 {

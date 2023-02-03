@@ -6,42 +6,11 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 10:29:53 by vcacador          #+#    #+#             */
-/*   Updated: 2023/01/25 17:58:27 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/02/02 18:22:38 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-int 	up_or_down(int nbr, int lower);
-
-void send_to_b(long nbr , int n_times, int lower)
-{
-	int tmp;
-
-	tmp = 0;
-	/* printf("%d lower\n", lower);
-	printf("%ld nbr\n", nbr); */
-	while(n_times >= 1)
-	{
-		tmp = up_or_down(nbr, lower);
-		/* printf("%d n_times\n", n_times); */
-		if (tmp == 1)
-		{
-			while (check_if_lower_n(nbr) == 0 && (stack_a()->stack[0] > nbr || stack_a()->stack[0] < lower))
-				reverse_rotate_a(0);
-			push_b();
-		}
-		if (tmp == 2)
-		{
-			while (check_if_lower_n(nbr) == 0 && (stack_a()->stack[0] > nbr || stack_a()->stack[0] < lower))
-				rotate_a(0);
-			push_b();
-			
-		}
-		n_times--;
-	}
-	return ;
-}
 
 long get_3_lower_A(int *array, int lenght, int n)
 {
@@ -49,43 +18,7 @@ long get_3_lower_A(int *array, int lenght, int n)
 		
 	if (index + n <= lenght)
 		index += n;
-	/* else
-		return (2147483649); */
 	return (array[index - 1]);
-}
-
-long get_3_lower_A_2(int *array, int lenght, int n)
-{
-	static int	index_2;
-	
-	if (index_2 + n <= lenght)
-		index_2 += n;
-	/* else
-		return (2147483649); */
-	return (array[index_2 - 1]);
-}
-
-
-int up_or_down(int nbr , int lower)
-{
-	int tmp;
-	int j;
-	int i;
-
-	tmp = 0;
-	i = 0;
-	j = 0;
-	while (stack_a()->stack[j] > nbr || stack_a()->stack[j] < lower)
-		j++;
-	tmp = stack_a()->length - 1;
-	while (stack_a()->stack[tmp] > nbr || stack_a()->stack[tmp] < lower)
-	{
-		tmp--;
-		i++;
-	}
-	if (i < j)
-		return (1);
-	return (2);
 }
 
 void sort_tmp(void)
@@ -126,4 +59,3 @@ int check_if_lower_n(int n)
 	}
 	return (1);
 }
-

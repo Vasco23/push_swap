@@ -6,7 +6,7 @@
 /*   By: vcacador <vcacador@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 10:24:48 by vcacador          #+#    #+#             */
-/*   Updated: 2023/01/26 01:37:12 by vcacador         ###   ########.fr       */
+/*   Updated: 2023/02/02 12:23:51 by vcacador         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,5 @@ int	confirm(void)
 			return (1);
 		i++;
 	}
-	/* if (i != utils()->ac - 2)
-		return (2); */
 	return (0);
 }
